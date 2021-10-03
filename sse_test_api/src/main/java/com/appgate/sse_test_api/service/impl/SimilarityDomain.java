@@ -1,6 +1,7 @@
 package com.appgate.sse_test_api.service.impl;
 
 import com.appgate.sse_test_api.pojo.Domain;
+import com.appgate.sse_test_api.repository.ProcessRepository;
 import net.ricecode.similarity.StringSimilarityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,16 +23,19 @@ public class SimilarityDomain implements ISimilarityDomain {
     @Autowired
     private SpecialDomainChecker specialDomainChecker;
 
+    @Autowired
+    private SaveProcess saveProcess;
+
     @Override
     public Domain getSimilarDomains(String target, List list) {
-        ArrayList lstSimilarDomains = new ArrayList();
-        ArrayList lstPunycodeDomains = new ArrayList();
+        ArrayList<String> lstSimilarDomains = new ArrayList();
+        ArrayList<String> lstPunycodeDomains = new ArrayList();
         Domain domain = new Domain();
 
         list.stream().forEach(x -> {
             double score = similarityService.score(x.toString(), target);
             if(score >= 0.6){
-                lstSimilarDomains.add(x);
+                lstSimilarDomains.add(x.toString());
             }
 
             String punnyDomain = specialDomainChecker.checkDomain(x.toString(), target);
@@ -44,6 +48,8 @@ public class SimilarityDomain implements ISimilarityDomain {
         domain.setDominio(target);
         domain.setDominios_similares(lstSimilarDomains);
         domain.setDominios_sim_punycode(lstPunycodeDomains);
+
+        saveProcess.saveProcessIntoDB(target, lstSimilarDomains, lstPunycodeDomains,list);
 
         return domain;
     }

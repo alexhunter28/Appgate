@@ -1,5 +1,6 @@
 package com.appgate.sse_test_api.config;
 
+import com.google.gson.Gson;
 import net.ricecode.similarity.DiceCoefficientStrategy;
 import net.ricecode.similarity.SimilarityStrategy;
 import net.ricecode.similarity.StringSimilarityService;
@@ -14,6 +15,11 @@ public class AppConfiguration {
     public StringSimilarityService similarityService(){
         SimilarityStrategy strategy = new DiceCoefficientStrategy();
         return new StringSimilarityServiceImpl(strategy);
+    }
+
+    @Bean
+    public Gson gson(){
+        return new Gson();
     }
 
 }

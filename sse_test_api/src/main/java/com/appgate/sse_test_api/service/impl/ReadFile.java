@@ -14,7 +14,7 @@ public class ReadFile implements IReadFile {
 
     @Override
     public List readFileInList()  throws IOException {
-        return Files.readAllLines(new File("src/dominios.txt").toPath(), Charset.defaultCharset() );
+       return Files.readAllLines(new File("src/dominios.txt").toPath(), Charset.defaultCharset() );
     }
 
 }

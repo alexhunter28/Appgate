@@ -1,9 +1,10 @@
 package com.appgate.sse_test_api.service;
 
-import java.util.ArrayList;
+import com.appgate.sse_test_api.pojo.Domain;
+
 import java.util.List;
 
 public interface ISimilarityDomain {
 
-    public ArrayList<String> getSimilarDomains(String target, List list);
+    public Domain getSimilarDomains(String target, List list);
 }

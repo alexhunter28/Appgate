@@ -12,3 +12,15 @@ Para dar solución al problema de comparar la similaridad de las palabras se inv
 
 Para resolver el problema de los caracteres punycode se uso la libreria IDN
 * [IDN](https://docs.oracle.com/javase/7/docs/api/java/net/IDN.html)
+
+## Prerequisitos
+
+Para poder ejecutar la aplicación se debe teenr instalado lo siguiente:
+
+* [Git](http://git-scm.com/)
+* [Docker](https://www.docker.com/)
+* [JAVA 11](https://www.oracle.com/java/technologies/downloads/)
+
+## Instalación en local
+* Clonar `https://github.com/alexhunter28/Appgate.git` este repositorio
+* Ejecutar con su IDE preferido en el desarrollo de este proyecto se usó [IntelliJ](https://www.jetbrains.com/)

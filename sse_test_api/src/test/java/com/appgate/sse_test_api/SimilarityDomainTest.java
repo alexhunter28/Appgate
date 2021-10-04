@@ -13,8 +13,10 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.when;
 
@@ -50,9 +52,8 @@ public class SimilarityDomainTest {
         when(saveProcess.saveProcessIntoDB(anyString(),any(), any(), anyList())).thenReturn(null);
 
         Domain domain = similarityDomain.getSimilarDomains("Bancolombia.com", list);
-        System.out.println(domain.getDominio());
-        System.out.println(domain.getDominios_similares());
-        System.out.println(domain.getDominios_sim_punycode());
+        assertEquals(domain.getDominios_sim_punycode(), Arrays.asList("banиcфlфmbia.com", "banиcфlфmbia.com", "banиcфlфmbia.com"));
+        assertEquals(domain.getDominios_similares(), Arrays.asList("xn--banclmbia-d1h7kb.com", "bancolombia1amano.com.co", "enlineabancolombia.net"));
 
     }
 }

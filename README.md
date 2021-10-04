@@ -38,5 +38,21 @@ Para realizar el consumo de los servicios se adjunta un PostmanCollection con lo
 * Parametros `domain`
 * Ejemplo: `http://localhost:8080/data/find/domain?domain=Bancolombia.com`
 
+* Estructura de Respuesta:
+
+````
+[
+    {
+        "id": "String",
+        "date": "String",
+        "domainChecked": "String",
+        "similarityDomainsFound": "String",
+        "punycodeDomainsFound": "String",
+        "validatedDomainList": "String"     
+    }
+]
+
+````
+
 
 

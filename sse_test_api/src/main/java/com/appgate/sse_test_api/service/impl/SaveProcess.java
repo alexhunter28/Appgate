@@ -1,7 +1,8 @@
 package com.appgate.sse_test_api.service.impl;
 
 import com.appgate.sse_test_api.entity.Process;
-import com.appgate.sse_test_api.repository.ProcessRepository;
+import com.appgate.sse_test_api.repository.IProcessRepository;
+import com.appgate.sse_test_api.service.ISaveProcess;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,11 +13,12 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-public class SaveProcess {
+public class SaveProcess implements ISaveProcess {
 
     @Autowired
-    private ProcessRepository processRepository;
+    private IProcessRepository IProcessRepository;
 
+    @Override
     public String saveProcessIntoDB(String domainChecked, ArrayList<String> similarityDomainsFound, ArrayList<String> punycodeDomainsFound, List validatedDomainList){
 
         Process process = new Process();
@@ -28,7 +30,7 @@ public class SaveProcess {
         process.setPunycodeDomainsFound(gson.toJson(punycodeDomainsFound));
         process.setValidatedDomainList(gson.toJson(validatedDomainList));
 
-        Process save = processRepository.save(process);
+        Process save = IProcessRepository.save(process);
         return save.getId().toString();
     }
 

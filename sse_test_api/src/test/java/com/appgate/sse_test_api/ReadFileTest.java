@@ -8,6 +8,7 @@ import org.mockito.InjectMocks;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -19,7 +20,7 @@ public class ReadFileTest {
     ReadFile readFile;
 
     @Test
-    public void when_get_a_file_return_a_list() throws IOException {
+    public void when_get_a_file_return_a_list() throws Exception {
         List result = readFile.readFileInList();
         assertEquals(result.get(0), "a-l-x-factory.academy.");
     }

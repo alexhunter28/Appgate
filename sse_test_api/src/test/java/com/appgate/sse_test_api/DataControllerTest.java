@@ -15,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -61,7 +62,7 @@ public class DataControllerTest {
 
 
     @Test
-    public void checkDataStatic() throws IOException {
+    public void checkDataStatic() throws Exception {
         when(similarityDomain.getSimilarDomains(anyString(),anyList())).thenReturn(dominio);
         when(readFile.readFileInList()).thenReturn(Arrays.asList("Lista1", "Lista2"));
         ResponseEntity<Domain> result = dataController.checkDataStatic("Bancolombia.com");

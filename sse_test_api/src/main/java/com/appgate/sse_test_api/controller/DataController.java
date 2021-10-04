@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 @RestController
 @RequestMapping("data/check")
@@ -22,7 +23,7 @@ public class DataController {
     IReadFile iReadFile;
 
     @PostMapping("/static")
-    public ResponseEntity<Domain> checkDataStatic(@RequestParam("target") String target) throws IOException {
+    public ResponseEntity<Domain> checkDataStatic(@RequestParam("target") String target) throws Exception {
          return  new ResponseEntity<>(iSimilarityDomain.getSimilarDomains(target, iReadFile.readFileInList()), HttpStatus.OK);
     }
 

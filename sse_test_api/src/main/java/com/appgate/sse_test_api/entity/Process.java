@@ -1,6 +1,8 @@
 package com.appgate.sse_test_api.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -19,5 +21,4 @@ public class Process {
     private String punycodeDomainsFound;
     @Lob
     private String validatedDomainList;
-
 }

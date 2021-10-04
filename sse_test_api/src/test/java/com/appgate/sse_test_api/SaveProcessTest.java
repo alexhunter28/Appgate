@@ -1,9 +1,8 @@
 package com.appgate.sse_test_api;
 
 import com.appgate.sse_test_api.entity.Process;
-import com.appgate.sse_test_api.repository.ProcessRepository;
+import com.appgate.sse_test_api.repository.IProcessRepository;
 import com.appgate.sse_test_api.service.impl.SaveProcess;
-import com.google.gson.Gson;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +16,6 @@ import java.util.Date;
 import java.util.UUID;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -27,7 +25,7 @@ public class SaveProcessTest {
     SaveProcess saveProcess;
 
     @Mock
-    ProcessRepository processRepository;
+    IProcessRepository IProcessRepository;
 
     Process process;
 
@@ -54,7 +52,7 @@ public class SaveProcessTest {
 
     @Test
     public void when_save_process_intoDB_return_id(){
-        when(processRepository.save(Mockito.any(Process.class))).thenReturn(process);
+        when(IProcessRepository.save(Mockito.any(Process.class))).thenReturn(process);
         String result = saveProcess.saveProcessIntoDB("Bancolombia.com", lstGeneric,lstGeneric,lstGeneric);
         assertEquals(result, "f000123a-0451-4000-b000-000000000000");
 

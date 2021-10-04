@@ -17,9 +17,4 @@ public class AppConfiguration {
         return new StringSimilarityServiceImpl(strategy);
     }
 
-    @Bean
-    public Gson gson(){
-        return new Gson();
-    }
-
 }

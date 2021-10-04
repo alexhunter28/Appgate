@@ -22,7 +22,7 @@ public class DataController {
     IReadFile iReadFile;
 
     @PostMapping("/static")
-    public ResponseEntity<Domain> checkDataStatic(@RequestParam("target") String target, @RequestParam("source") String source) throws IOException {
+    public ResponseEntity<Domain> checkDataStatic(@RequestParam("target") String target) throws IOException {
 
          return  new ResponseEntity<>(iSimilarityDomain.getSimilarDomains(target, iReadFile.readFileInList()), HttpStatus.OK);
     }

@@ -17,13 +17,10 @@ public class SaveProcess {
     @Autowired
     private ProcessRepository processRepository;
 
-    @Autowired
-    private Gson gson;
-
-
     public String saveProcessIntoDB(String domainChecked, ArrayList<String> similarityDomainsFound, ArrayList<String> punycodeDomainsFound, List validatedDomainList){
 
         Process process = new Process();
+        Gson gson = new Gson();
         process.setId(UUID.randomUUID());
         process.setDate(new Date());
         process.setDomainChecked(domainChecked);

@@ -13,6 +13,8 @@ Para dar solución al problema de comparar la similaridad de las palabras se inv
 Para resolver el problema de los caracteres punycode se uso la libreria IDN
 * [IDN](https://docs.oracle.com/javase/7/docs/api/java/net/IDN.html)
 
+Se debe tener en cuenta que la API cuenta con una DB embebida H2 (Relacional), el proyecto puede aceptar cualquier DB relaciional solo cambiando los parametros de conexión en el `application.yml`
+
 ## Prerequisitos
 
 Para poder ejecutar la aplicación se debe teenr instalado lo siguiente:

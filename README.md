@@ -26,3 +26,17 @@ Para poder ejecutar la aplicación se debe teenr instalado lo siguiente:
 ## Instalación en local
 * Clonar `https://github.com/alexhunter28/Appgate.git` este repositorio
 * Ejecutar con su IDE preferido en el desarrollo de este proyecto se usó [IntelliJ](https://www.jetbrains.com/)
+
+
+
+## Consumo de servicios
+
+Para realizar el consumo de los servicios se adjunta un PostmanCollection con los respectivos ambientes locales
+
+* 1. Servicio `Get  domain processed` : Obtiene la información almacenada de algún dominio previamente procesado
+* Servicio tipo `GET` URI: `/data/find/domain`
+* Parametros `domain`
+* Ejemplo: `http://localhost:8080/data/find/domain?domain=Bancolombia.com`
+
+
+

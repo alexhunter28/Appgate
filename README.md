@@ -22,10 +22,15 @@ Para poder ejecutar la aplicación se debe teenr instalado lo siguiente:
 * [Git](http://git-scm.com/)
 * [Docker](https://www.docker.com/)
 * [JAVA 11](https://www.oracle.com/java/technologies/downloads/) o superior
+* [Gradle](https://gradle.org/)
  
 ## Instalación en local
 * Clonar `https://github.com/alexhunter28/Appgate.git` este repositorio
 * Ejecutar con su IDE preferido en el desarrollo de este proyecto se usó [IntelliJ](https://www.jetbrains.com/)
+* generar el JAR del proyecto usando el siguiente comando: `./gradlew build`
+
+
+* Dentro del proyecto encontraremos el archivo `Dockerfile` que se encargará de crear la imagen del JAR previamente generado
 
 
 

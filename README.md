@@ -158,6 +158,10 @@ Debido a que el tiempo de este challenge es limitado, no se puede decir que la a
 5. Código
  * Implementar un mejor manejo de los errores dentro del Micro, realizar la documentación del código, crear los perfiles de la aplicación según los ambientes se recomiendan 3 ambientes `Desarrollo`, `Pruebas` y `Producción `
 
+## Arquitectura recomendada
+
+
+![AppgateArq](https://user-images.githubusercontent.com/36106982/136107417-d72ff791-1b46-419f-b845-f78a9a6c5a8c.png)
 
 
 

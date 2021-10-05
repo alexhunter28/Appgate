@@ -127,6 +127,8 @@ Para realizar el consumo de los servicios se adjunta un PostmanCollection con lo
 
 ## Unit test
 
-Los test unitario fueron desarrolados usando [JUNIT](https://junit.org/junit5/) y [Mockito](https://site.mockito.org/) Se adjuntan evidencias de los test unitarios, tambien se pueden ejecutar en el proyecto con el siguiente comando: `./gradlew test` y se genera el reporte con la ayuda de [Jacoco](https://www.jacoco.org/jacoco/trunk/index.html), se generan los reportes dentro de la siguiente ruta en el proyecto `build/reports/tests/test/index.html`
+Los test unitario fueron desarrolados usando [JUNIT](https://junit.org/junit5/) y [Mockito](https://site.mockito.org/) Se adjuntan evidencias de los test unitarios, tambien se pueden ejecutar en el proyecto con el siguiente comando: `./gradlew test` y se genera el reporte con la ayuda de [Jacoco](https://www.jacoco.org/jacoco/trunk/index.html), los reportes se generan dentro de la siguiente ruta en el proyecto `build/reports/tests/test/index.html` y en `build/jacocoHtml/index.html`
+
+
 
 

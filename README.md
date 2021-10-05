@@ -47,7 +47,8 @@ Para poder ejecutar la aplicación se debe teenr instalado lo siguiente:
 
 Para realizar el consumo de los servicios se adjunta un PostmanCollection con los respectivos ambientes locales
 
-* 1. Servicio `Get  domain processed` : Obtiene la información almacenada de algún dominio previamente procesado
+1. Servicio `Get  domain processed` : Obtiene la información almacenada de algún dominio previamente procesado
+
 * Servicio tipo `GET` URI: `/data/find/domain`
 * Parametros `domain`
 * Ejemplo: `http://localhost:8080/data/find/domain?domain=Bancolombia.com`
@@ -66,6 +67,26 @@ Para realizar el consumo de los servicios se adjunta un PostmanCollection con lo
     }
 ]
 
+````
+
+2. Servicio `Check domain from static list` : Este servicio valida un dominio usando el archivo de texto `dominios.txt` y persiste la data procesada
+* Servicio tipo `POST` URI: `/data/check/static`
+* Parametros: `target`
+* Ejemplo: `http://localhost:8080/data/check/static?target=Bancolombia.com`
+
+* Estructura de Respuesta:
+````
+{
+    "dominios_similares": [
+        "bancolombia1amano.com.co",
+        "enlineabancolombia.net"
+    ],
+    "dominios_sim_punycode": [
+        "banиcфlфmbia.com",
+        "ьancol0mbia.com.co"
+    ],
+    "dominio": "Bancolombia.com"
+}
 ````
 
 

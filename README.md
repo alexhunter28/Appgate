@@ -37,6 +37,9 @@ Para poder ejecutar la aplicación se debe teenr instalado lo siguiente:
 
 * Para ejecutar nuestro proyecto podemos hacerlo directamete en el dashboard o ejecutando el siguiente comando:
   `docker run -p 8080:8080 sse_test_api-1.0.0`
+  
+  
+<img width="1266" alt="Screen Shot 2021-10-05 at 2 53 17 PM" src="https://user-images.githubusercontent.com/36106982/136093376-b9297107-006d-4c6e-9d09-671358fb3232.png">
 
 
 

@@ -49,45 +49,81 @@ Para realizar el consumo de los servicios se adjunta un PostmanCollection con lo
 
 1. Servicio `Get  domain processed` : Obtiene la información almacenada de algún dominio previamente procesado
 
-* Servicio tipo `GET` URI: `/data/find/domain`
-* Parametros `domain`
-* Ejemplo: `http://localhost:8080/data/find/domain?domain=Bancolombia.com`
+  * Servicio tipo `GET` URI: `/data/find/domain`
+  * Parametros `domain`
+  * Ejemplo: `http://localhost:8080/data/find/domain?domain=Bancolombia.com`
 
-* Estructura de Respuesta:
+  * Estructura de Respuesta:
 
-````
-[
-    {
-        "id": "String",
-        "date": "String",
-        "domainChecked": "String",
-        "similarityDomainsFound": "String",
-        "punycodeDomainsFound": "String",
-        "validatedDomainList": "String"     
-    }
-]
+  ````
+  [
+      {
+          "id": "String",
+          "date": "String",
+          "domainChecked": "String",
+          "similarityDomainsFound": "String",
+          "punycodeDomainsFound": "String",
+          "validatedDomainList": "String"     
+      }
+  ]
 
-````
+  ````
 
 2. Servicio `Check domain from static list` : Este servicio valida un dominio usando el archivo de texto `dominios.txt` y persiste la data procesada
-* Servicio tipo `POST` URI: `/data/check/static`
-* Parametros: `target`
-* Ejemplo: `http://localhost:8080/data/check/static?target=Bancolombia.com`
+  * Servicio tipo `POST` URI: `/data/check/static`
+  * Parametros: `target`
+  * Ejemplo: `http://localhost:8080/data/check/static?target=Bancolombia.com`
 
-* Estructura de Respuesta:
-````
-{
-    "dominios_similares": [
-        "bancolombia1amano.com.co",
-        "enlineabancolombia.net"
-    ],
-    "dominios_sim_punycode": [
-        "banиcфlфmbia.com",
-        "ьancol0mbia.com.co"
-    ],
-    "dominio": "Bancolombia.com"
-}
-````
+  * Estructura de Respuesta:
+  ````
+  {
+      "dominio": String,
+      "dominios_similares": [
+          String,
+          String
+      ],
+      "dominios_sim_punycode": [
+          String,
+          String
+      ]
+
+  }
+  ````
+
+
+3. Servicio `Check domain from dynamic list` : Este servicio valida un dominio usando una lista enviada en el body JSON de la petición ser y persiste la data procesada
+  * Servicio tipo `POST` URI: `/data/check/dynamic`
+  * Ejemplo Body: 
+    ````
+    {
+      "target": "Bancolombia.com",
+      "domainList" : [
+          "olinmarcus.world.",
+          "olympia.world.",
+          "bancolombia1amano.com.co",
+          "opendata.world.",
+          "osrxj.world.",
+          "ovazl.world."
+      ]
+    }
+    ````
+  * Ejemplo: `http://localhost:8080/data/check/dynamic`
+
+  * Estructura de Respuesta:
+  ````
+  {
+      "dominio": String,
+      "dominios_similares": [
+          String,
+          String
+      ],
+      "dominios_sim_punycode": [
+          String,
+          String
+      ]
+
+  }
+  ````
 
 
 

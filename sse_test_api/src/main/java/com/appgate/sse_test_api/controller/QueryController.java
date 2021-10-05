@@ -16,7 +16,6 @@ public class QueryController {
     @Autowired
     IProcessRepository iProcessRepository;
 
-
     @GetMapping("/domain")
     public ResponseEntity<List<Process>> getProcessedDomains(@RequestParam("domain") String domain){
         return  new ResponseEntity<>(iProcessRepository.findByDomainChecked(domain), HttpStatus.OK);

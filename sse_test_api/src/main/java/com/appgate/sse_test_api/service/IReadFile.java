@@ -5,5 +5,5 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 public interface IReadFile {
-    public List readFileInList() throws Exception;
+    public List readFileInList(String filename) throws Exception;
 }

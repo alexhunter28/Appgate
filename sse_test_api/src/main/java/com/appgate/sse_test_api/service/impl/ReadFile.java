@@ -16,11 +16,10 @@ import java.util.List;
 public class ReadFile implements IReadFile {
 
     @Override
-    public List readFileInList() throws Exception {
+    public List readFileInList(String filename) throws Exception {
 
-    try {
         List<String> list = new ArrayList<>();
-        InputStream in = getClass().getResourceAsStream("/dominios.txt");
+        InputStream in = getClass().getResourceAsStream("/" + filename);
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(in))) {
             while (br.ready()) {
@@ -28,9 +27,6 @@ public class ReadFile implements IReadFile {
             }
         }
         return list;
-    }catch (Exception e){
-        throw new Exception("Error reading the file: " + e.getMessage());
-    }
     }
 
 }

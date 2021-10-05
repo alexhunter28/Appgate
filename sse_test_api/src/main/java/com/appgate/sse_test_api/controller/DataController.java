@@ -9,9 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-
 @RestController
 @RequestMapping("data/check")
 public class DataController {
@@ -24,7 +21,7 @@ public class DataController {
 
     @PostMapping("/static")
     public ResponseEntity<Domain> checkDataStatic(@RequestParam("target") String target) throws Exception {
-         return  new ResponseEntity<>(iSimilarityDomain.getSimilarDomains(target, iReadFile.readFileInList()), HttpStatus.OK);
+         return  new ResponseEntity<>(iSimilarityDomain.getSimilarDomains(target, iReadFile.readFileInList("dominios.txt")), HttpStatus.OK);
     }
 
     @PostMapping("/dynamic")

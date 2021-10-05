@@ -27,10 +27,9 @@ Para poder ejecutar la aplicación se debe teenr instalado lo siguiente:
 ## Instalación en local
 * Clonar `https://github.com/alexhunter28/Appgate.git` este repositorio
 * Ejecutar con su IDE preferido en el desarrollo de este proyecto se usó [IntelliJ](https://www.jetbrains.com/)
-* generar el JAR del proyecto usando el siguiente comando: `./gradlew build`
-
-
-* Dentro del proyecto encontraremos el archivo `Dockerfile` que se encargará de crear la imagen del JAR previamente generado
+* Generar el JAR del proyecto usando el siguiente comando: `./gradlew build`
+* Dentro del proyecto encontraremos el archivo `Dockerfile` que se encargará de crear la imagen del JAR previamente 
+  generado usando el siguiente comando: `docker build --build-arg JAR_FILE=build/libs/\*.jar -t sse_test_api-1.0.0 .`
 
 
 

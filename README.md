@@ -94,19 +94,19 @@ Para realizar el consumo de los servicios se adjunta un PostmanCollection con lo
 3. Servicio `Check domain from dynamic list` : Este servicio valida un dominio usando una lista enviada en el body JSON de la petición ser y persiste la data procesada
   * Servicio tipo `POST` URI: `/data/check/dynamic`
   * Ejemplo Body: 
-    ````
-    {
-      "target": "Bancolombia.com",
-      "domainList" : [
-          "olinmarcus.world.",
-          "olympia.world.",
-          "bancolombia1amano.com.co",
-          "opendata.world.",
-          "osrxj.world.",
-          "ovazl.world."
-      ]
-    }
-    ````
+  ````
+  {
+    "target": "Bancolombia.com",
+    "domainList" : [
+        "olinmarcus.world.",
+        "olympia.world.",
+        "bancolombia1amano.com.co",
+        "opendata.world.",
+        "osrxj.world.",
+        "ovazl.world."
+    ]
+  }
+  ````
   * Ejemplo: `http://localhost:8080/data/check/dynamic`
 
   * Estructura de Respuesta:

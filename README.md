@@ -30,6 +30,13 @@ Para poder ejecutar la aplicación se debe teenr instalado lo siguiente:
 * Generar el JAR del proyecto usando el siguiente comando: `./gradlew build`
 * Dentro del proyecto encontraremos el archivo `Dockerfile` que se encargará de crear la imagen del JAR previamente 
   generado usando el siguiente comando: `docker build --build-arg JAR_FILE=build/libs/\*.jar -t sse_test_api-1.0.0 .`
+  
+  Una ves finalizado el proceso podremos ver nuestra imagen en el dashboard de Docker
+  
+  <img width="1276" alt="Screen Shot 2021-10-05 at 2 46 45 PM" src="https://user-images.githubusercontent.com/36106982/136092733-ba29e570-532d-4417-a779-b13f4bb6b760.png">
+
+* Para ejecutar nuestro proyecto podemos hacerlo directamete en el dashboard o ejecutando el siguiente comando:
+  `docker run -p 8080:8080 sse_test_api-1.0.0`
 
 
 

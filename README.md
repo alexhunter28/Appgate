@@ -19,6 +19,8 @@ Para resolver el problema de los caracteres punycode se uso la libreria IDN
 
 Se debe tener en cuenta que la API cuenta con una DB embebida [H2](https://www.h2database.com/) (Relacional), el proyecto puede aceptar cualquier DB relacional solo cambiando los parametros de conexión en el `application.yml`
 
+**NOTA: Actualmente la DB embebida, tiene la función `create-drop`, lo que significa que cada vez que la app se levante, se eliminará la DB y se volverá a crear, esto con el fin de evitar que se ocupe espacio en disco en ambiente de desarrollo
+
 ## Prerequisitos
 
 Para poder ejecutar la aplicación se debe teenr instalado lo siguiente:
@@ -136,6 +138,25 @@ Los test unitario fueron desarrolados usando [JUNIT](https://junit.org/junit5/) 
 ![Screen Shot 2021-10-05 at 3 24 26 PM](https://user-images.githubusercontent.com/36106982/136097393-17350f68-80cc-4b7e-8f50-81fac58e9135.png)
 
 ![Screen Shot 2021-10-05 at 3 26 02 PM](https://user-images.githubusercontent.com/36106982/136097491-901a32c4-3f52-4a6c-b6b4-302621b18bee.png)
+
+
+## Futuros releases
+
+Debido a que el tiempo de este challenge es limitado, no se puede decir que la aplicación desarrollada es "perfecta", se peude considerar como un primer entrgable, entre los futuros releases se puede Optar por lo siguiente:
+
+1. Completar la parte gráfica ya que actualmente no posee un frontend, para completar con el RF3, pero igual se puede completar con el objetivo de este RF a traves de POSTMAN
+
+2. Seguridad:
+    * Servicios de autenticación como [Oauth2](https://oauth.net/2/), Uso de firewalls cloud como [WAF](https://aws.amazon.com/waf/), Autenticación mutua SSL,           manejo de secretos comó [parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) y cifrado de    mensajes.
+
+3. Observabilidad:
+   * Implememtación de monitoreo como [Datadog](https://www.datadoghq.com/), [New Relic](https://newrelic.com/), [Dynatrace](https://www.dynatrace.com/).
+
+4. Automatización:
+   * Actualmente el despliegue se realiza de forma manual, la idea es implementar una automatización usando herramientas      como [Jenkins](https://www.jenkins.io/) ó [CircleCI](https://circleci.com/) , para la construcción de pipelines que     incluyan ejecución de pruebas, Análisis de código estático, pruebas de integración, integración y despliegue continuó (CI/CD), tambien incluyendo el versionamiento de artefactos con [JFrog](https://jfrog.com/).
+ 
+5. Código
+ * Implementar un mejor manejo de los errores dentro del Micro, realizar la documentación del código, crear los perfiles de la aplicación según los ambientes se recomiendan 3 ambientes `Desarrollo`, `Pruebas` y `Producción `
 
 
 

@@ -53,6 +53,9 @@ Para poder ejecutar la aplicación se debe teenr instalado lo siguiente:
 
 Para realizar el consumo de los servicios se adjunta un PostmanCollection con los respectivos ambientes locales
 
+[AppgateCollection.postman_collection.json.zip](https://github.com/alexhunter28/Appgate/files/7295077/AppgateCollection.postman_collection.json.zip)
+
+
 1. Servicio `Get  domain processed` : Obtiene la información almacenada de algún dominio previamente procesado
 
   * Servicio tipo `GET` URI: `/data/find/domain`
